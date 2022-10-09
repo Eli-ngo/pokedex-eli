@@ -6,20 +6,19 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Bookmarks from './components/Bookmarks';
-import PokemonsList from './containers/PokemonsList';
+import List from './components/List';
 
 const router = createBrowserRouter([
     {
-        path: '/',
         element: <App />,
         children: [
             {
-                path: "/bookmarks",
-                element: <Bookmarks />
+                path: "/",
+                element: <List />
             },
             {
-                path: "/pokemons",
-                element: <PokemonsList />
+                path: "/bookmarks",
+                element: <Bookmarks />
             }
         ]
     }

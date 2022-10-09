@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import Pokemon from "../components/Pokemon";
 
-const PokemonsList = () => {
+const PokemonsList = ({search}) => {
     const [ pokemons, setPokemons ] = useState([]);
     const [ isLoading, setIsLoading ] = useState(true);
     const [ error, setError ] = useState(null);
@@ -21,11 +21,20 @@ const PokemonsList = () => {
         }
     }
 
+    const filteredPokemons = pokemons.filter((element) => {
+        if(search === ''){
+            return element
+        }else{
+            return element.name.toLowerCase().includes(search.toLowerCase());
+        }
+
+    })
+
     useEffect(() => {
         fetchPokemons();
     }, []);
 
-    if(isLoading) return "Chargement..."
+    if(isLoading) return "Chargement des Pokémons..."
     if(error) return error;
 
     if(pokemons.length === 0){
@@ -34,8 +43,8 @@ const PokemonsList = () => {
 
     return(
         <>
-            <div>
-                {pokemons.map((pokemon, i) => (
+            <div className="flex flex-wrap">
+                {filteredPokemons.map((pokemon, i) => (
                     <Pokemon key={i} name={pokemon.name} id={i} />
                 ))}
             </div>
