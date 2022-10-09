@@ -1,6 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 
-import PokemonsList from "containers/PokemonsList";
+import Pokemons from "../containers/Pokemons";
 
 const List = () => {
     const [ searchParams, setSearchParams ] = useSearchParams();
@@ -23,7 +23,7 @@ const List = () => {
             <form>
                 <input className="border-2 border-rose-500" type="text" value={searchPokemon} onChange={handleSearch}/>
             </form>
-            <PokemonsList search={searchPokemon}/>
+            <Pokemons search={searchPokemon}/>
         </div>
     )
 }

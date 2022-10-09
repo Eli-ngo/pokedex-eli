@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-import Pokemon from "../components/Pokemon";
+import PokemonCard from "../components/PokemonCard";
 
-const PokemonsList = ({search}) => {
+const Pokemons = ({search}) => {
     const [ pokemons, setPokemons ] = useState([]);
     const [ isLoading, setIsLoading ] = useState(true);
     const [ error, setError ] = useState(null);
@@ -45,11 +45,11 @@ const PokemonsList = ({search}) => {
         <>
             <div className="flex flex-wrap">
                 {filteredPokemons.map((pokemon, i) => (
-                    <Pokemon key={i} name={pokemon.name} id={i} />
+                    <PokemonCard key={i} name={pokemon.name} url={pokemon.url} />
                 ))}
             </div>
         </>
     )
 }
 
-export default PokemonsList;
+export default Pokemons;
