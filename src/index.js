@@ -6,7 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Bookmarks from './components/Bookmarks';
+import Types from './components/Types';
 import List from './components/List';
+import Pokemon from './containers/Pokemon';
 
 const router = createBrowserRouter([
     {
@@ -15,6 +17,14 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <List />
+            },
+            {
+                path: "/:slug",
+                element: <Pokemon />
+            },
+            {
+                path: "/types",
+                element: <Types />
             },
             {
                 path: "/bookmarks",
