@@ -1,7 +1,6 @@
 const PokemonCard = ({ name, url }) => {
-    console.log(url.split('/').slice())
     return(
-        <div className="pokemonCard bg-red-300 m-6">
+        <div className="pokemonCard bg-white m-6 rounded-t-xl">
             <h2>{ name }</h2>
             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${url.split('/').slice(-2, -1)}.png`} alt={name} />
         </div>
