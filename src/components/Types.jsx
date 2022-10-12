@@ -1,7 +1,10 @@
+import Alltypes from "../containers/Alltypes"
+
 const Types = () => {
     return(
         <>
-            <h1>PAGE TYPES</h1>
+            <h1>TYPES PAGE</h1>
+            <Alltypes />
         </>
     )
 }

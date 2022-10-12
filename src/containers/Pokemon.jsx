@@ -12,7 +12,6 @@ const Pokemon = () => {
         try{
             const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${slug}`);
             const fetchedPokemon = await res.json();
-            console.log(fetchedPokemon)
             
             setLoading(true)
             setPokemon(fetchedPokemon);
@@ -31,8 +30,21 @@ const Pokemon = () => {
     return (
         <>
             {loading ? <div>
-                <p>{pokemon.name}</p>
-                <p>{pokemon.id}</p>
+                <p>Nom : {pokemon.name}</p>
+                <p>ID : {pokemon.id}</p>
+                <p>Taille : {pokemon.height} cm</p>
+                <p>Poids : {pokemon.weight} kg</p>
+                <img src={pokemon.sprites.back_default} alt={pokemon.name} />
+                {pokemon.abilities.map((ability, i) => (
+                    <div key={i}>
+                        Capacités : {ability.ability.name}
+                    </div>
+                ))}
+                {pokemon.types.map((type, i) => (
+                    <div key={i}>
+                        Types : {type.type.name}
+                    </div>
+                ))}
             </div> : <Loading /> }
 
             <Link to='/'>Retour à l'accueil</Link>

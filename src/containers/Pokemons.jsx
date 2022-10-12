@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import PokemonCard from "../components/PokemonCard";
 import Loading from "../components/Loading";
 
-const Pokemons = ({search}) => {
+const Pokemons = ({ search }) => {
     const [ pokemons, setPokemons ] = useState([]);
     const [ loading, setLoading ] = useState(false);
     const [ error, setError ] = useState(null);
