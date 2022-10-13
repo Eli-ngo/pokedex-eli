@@ -1,7 +1,6 @@
-import { type } from "@testing-library/user-event/dist/type";
 import { useState, useEffect } from "react";
 
-const Alltypes = () => {
+const Types = () => {
     const [ types, setTypes ] = useState([]);
 
     const fetchTypes = async () => {
@@ -10,7 +9,6 @@ const Alltypes = () => {
             const fetchedTypes = await response.json();
 
             setTypes(fetchedTypes.results);
-            console.log(fetchedTypes)
             
         } catch(err){
             throw err;
@@ -32,4 +30,4 @@ const Alltypes = () => {
     )
 }
 
-export default Alltypes;
+export default Types;

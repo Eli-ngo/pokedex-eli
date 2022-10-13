@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import PokemonCard from "../components/PokemonCard";
 import Loading from "../components/Loading";
 
-const Pokemons = ({ search }) => {
+const Pokemons = ({search}) => {
     const [ pokemons, setPokemons ] = useState([]);
     const [ loading, setLoading ] = useState(false);
     const [ error, setError ] = useState(null);
@@ -41,7 +41,7 @@ const Pokemons = ({ search }) => {
 
     return(
         <>
-            {loading ? <div className="max-w-7xl mx-auto px-4 py-8 lg:max-w-7x1 grid grid-cols-1 gap-y-10 gap-x-8 sm:grid-cols-2 lg:grid-cols-4 xl-grid-cols-4">
+            {loading ? <div className="max-w-7xl mx-auto px-2 py-8 lg:max-w-7x1 grid grid-cols-2 gap-y-8 gap-x-8 sm:grid-cols-3 lg:grid-cols-5 xl-grid-cols-4">
                 {filteredPokemons.map((pokemon, i) => (
                     <PokemonCard key={i} name={pokemon.name} url={pokemon.url} />
                 ))}
