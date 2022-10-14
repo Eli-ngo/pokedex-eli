@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 const PokemonCard = ({ name, url }) => {
+
     return(
         <div className="pokemonCard bg-white m-4 p-6 rounded-3xl shadow-lg flex justify-center items-center flex-col">
             <button>Favoris</button>

@@ -5,8 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import Bookmarks from './components/Bookmarks';
-import Typesfilter from './components/Typesfilter';
+import Bookmarks from './containers/Bookmarks';
+import Types from './containers/Types';
 import List from './components/List';
 import Pokemon from './containers/Pokemon';
 
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/types",
-                element: <Typesfilter />
+                element: <Types />
             },
             {
                 path: "/bookmarks",

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Typesfilter from '../components/Typesfilter';
 
 const Types = () => {
     const [ types, setTypes ] = useState([]);
@@ -21,11 +22,7 @@ const Types = () => {
 
     return(
         <> 
-            {types.map((type, i) => (
-                <div key={i}>
-                    {type.name}
-                </div>
-            ))}
+            <Typesfilter alltypes={types}/>
         </>
     )
 }
