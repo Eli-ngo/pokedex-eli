@@ -1,29 +1,15 @@
-import { useSearchParams } from "react-router-dom";
+import PokemonCard from "./PokemonCard";
 
-import Pokemons from "../containers/Pokemons";
-
-const List = () => {
-    const [ searchParams, setSearchParams ] = useSearchParams();
-
-    const searchPokemon = searchParams.get('search') || '';
-
-    const handleSearch = event => {
-        const search = event.target.value;
-
-        if(search){
-            setSearchParams({ search });
-        }else{
-            setSearchParams({});
-        }
-    }
+const List = ({filter}) => {
 
     return(
         <div className="flex flex-col items-center">
-            <h1>Liste de pokémons</h1>
-            <form>
-                <input className="border-2 border-rose-500" type="text" value={searchPokemon} onChange={handleSearch}/>
-            </form>
-            <Pokemons search={searchPokemon}/>
+
+            <div className="max-w-7xl mx-auto px-2 py-8 lg:max-w-7x1 grid grid-cols-2 gap-y-8 gap-x-8 sm:grid-cols-3 lg:grid-cols-5 xl-grid-cols-4">
+                {filter.map((pokemon, i) => (
+                    <PokemonCard key={i} name={pokemon.name} url={pokemon.url} />
+                ))}
+            </div>
         </div>
     )
 }

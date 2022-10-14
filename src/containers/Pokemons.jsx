@@ -1,12 +1,26 @@
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
-import PokemonCard from "../components/PokemonCard";
+import List from "../components/List";
 import Loading from "../components/Loading";
 
-const Pokemons = ({search}) => {
+const Pokemons = () => {
     const [ pokemons, setPokemons ] = useState([]);
     const [ loading, setLoading ] = useState(false);
     const [ error, setError ] = useState(null);
+    const [ searchParams, setSearchParams ] = useSearchParams();
+
+    const searchPokemon = searchParams.get('search') || '';
+
+    const handleSearch = event => {
+        const search = event.target.value;
+
+        if(search){
+            setSearchParams({ search });
+        }else{
+            setSearchParams({});
+        }
+    }
 
     const fetchPokemons = async () => {
         try{
@@ -23,10 +37,10 @@ const Pokemons = ({search}) => {
     }
 
     const filteredPokemons = pokemons.filter((element) => {
-        if(search === ''){
+        if(searchPokemon === ''){
             return element
         }else{
-            return element.name.toLowerCase().includes(search.toLowerCase());
+            return element.name.toLowerCase().includes(searchPokemon.toLowerCase());
         }
 
     })
@@ -41,11 +55,11 @@ const Pokemons = ({search}) => {
 
     return(
         <>
-            {loading ? <div className="max-w-7xl mx-auto px-2 py-8 lg:max-w-7x1 grid grid-cols-2 gap-y-8 gap-x-8 sm:grid-cols-3 lg:grid-cols-5 xl-grid-cols-4">
-                {filteredPokemons.map((pokemon, i) => (
-                    <PokemonCard key={i} name={pokemon.name} url={pokemon.url} />
-                ))}
-            </div> : <Loading /> }
+            <h1>Liste de pokémons</h1>
+            <form>
+                <input className="border-2 border-rose-500" type="text" value={searchPokemon} onChange={handleSearch}/>
+            </form>
+            {loading ? <List search={searchPokemon} filter={filteredPokemons} handle={handleSearch}/> : <Loading /> }
         </>
     )
 }

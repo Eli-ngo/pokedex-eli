@@ -7,7 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Bookmarks from './containers/Bookmarks';
 import Types from './containers/Types';
-import List from './components/List';
+import Pokemons from './containers/Pokemons';
 import Pokemon from './containers/Pokemon';
 
 const router = createBrowserRouter([
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <List />
+                element: <Pokemons />
             },
             {
                 path: "/:slug",
