@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Typesfilter from '../components/Typesfilter';
+import { Helmet } from "react-helmet";
 
 const Types = () => {
     const [ types, setTypes ] = useState([]);
@@ -21,10 +22,16 @@ const Types = () => {
     }, [])
 
     return(
-        <div className="flex flex-col justify-center items-center p-16"> 
+        <> 
+            <Helmet>
+            <title>Pokédex React | Types</title>
+            </Helmet>
+
+            <div className="flex flex-col justify-center items-center p-16"> 
             <h1>Filtre par types</h1>
             <Typesfilter alltypes={types}/>
         </div>
+        </>
     )
 }
 

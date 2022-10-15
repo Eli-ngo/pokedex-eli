@@ -1,6 +1,7 @@
 import PokemonCard from "./PokemonCard";
 
-const List = ({ filter, bookmark, setBookmark }) => {
+const PokemonsList = ({ filter, bookmark, setBookmark }) => {
+    
     return(
         <div className="flex flex-col items-center">
 
@@ -13,4 +14,4 @@ const List = ({ filter, bookmark, setBookmark }) => {
     )
 }
 
-export default List;
+export default PokemonsList;

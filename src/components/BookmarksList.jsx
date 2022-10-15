@@ -1,7 +1,9 @@
 import PokemonCard from "./PokemonCard"
 
-const Favlist = ({ pokemonFiltered, bookmark, setBookmark, mypokemons, id }) => {
+const BookmarksList = ({ pokemonFiltered, bookmark, setBookmark, mypokemons, id }) => {
+
     const mypokemonsFiltered = mypokemons.filter((poke) => poke.url.split('/').slice(-2, -1).toString() === id.toString())
+    
     return(
         <div className="flex flex-col items-center">
             {pokemonFiltered ? (
@@ -17,4 +19,4 @@ const Favlist = ({ pokemonFiltered, bookmark, setBookmark, mypokemons, id }) => 
 }
 
 
-export default Favlist
+export default BookmarksList
