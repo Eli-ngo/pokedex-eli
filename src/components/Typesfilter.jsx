@@ -6,14 +6,15 @@ const Typesfilter = ({alltypes}) => {
     }
 
     return(
-        <>
-            <h1>TYPES PAGE</h1>
-            {alltypes.map((type, i) => (
-                <div key={i}>
-                    <button onClick={handleType}>{type.name}</button>
-                </div>
-            ))}
-        </>
+        <div>
+            <div className="flex flex-wrap justify-center gap-5">
+                {alltypes.slice(0,18).map((type, i) => (
+                    <div key={i} className={`capitalize px-4 rounded-md bg-${type.name}`}>
+                        <button onClick={handleType}>{type.name}</button>
+                    </div>
+                ))}
+            </div>
+        </div>
     )
 }
 

@@ -21,9 +21,10 @@ const Types = () => {
     }, [])
 
     return(
-        <> 
+        <div className="flex flex-col justify-center items-center p-16"> 
+            <h1>Filtre par types</h1>
             <Typesfilter alltypes={types}/>
-        </>
+        </div>
     )
 }
 

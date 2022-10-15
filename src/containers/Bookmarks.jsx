@@ -1,8 +1,7 @@
 const Bookmarks = () => {
-    
     return(
         <>
-            <h1>PAGE FAVORIS</h1>
+            <h1>Pokémons favoris</h1>
         </>
     )
 }

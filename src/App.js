@@ -6,6 +6,7 @@ function App() {
   return (
       <>
         <Header />
+        <img className="object-cover w-full" src="banner.jpg" alt="couverture Pokémon"/>
         <Outlet />
       </>
   );

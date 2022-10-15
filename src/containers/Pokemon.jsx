@@ -28,20 +28,20 @@ const Pokemon = () => {
     }, [])
 
     return (
-        <>
-            {loading ? <div>
-                <p>Nom : {pokemon.name}</p>
+        <div className="flex justify-center items-center p-20 flex-col">
+            {loading ? <div className="bg-white">
+                <p className="capitalize">Nom : {pokemon.name}</p>
                 <p>ID : {pokemon.id}</p>
                 <p>Taille : {pokemon.height} cm</p>
                 <p>Poids : {pokemon.weight} kg</p>
                 <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`} alt={pokemon.name} />
-                {pokemon.abilities.map((ability, i) => (
+                {pokemon.abilities.slice(0,3).map((ability, i) => (
                     <div key={i}>
                         Capacités : {ability.ability.name}
                     </div>
                 ))}
                 {pokemon.types.map((type, i) => (
-                    <div key={i}>
+                    <div key={i} className={`capitalize bg-${type.type.name}`}>
                         Types : {type.type.name}
                     </div>
                 ))}
@@ -52,8 +52,8 @@ const Pokemon = () => {
                 ))}
             </div> : <Loading /> }
 
-            <Link to='/'>Retour à l'accueil</Link>
-        </>
+            <Link to='/'>Retour</Link>
+        </div>
     );
 }
 

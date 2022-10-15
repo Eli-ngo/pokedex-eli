@@ -55,10 +55,10 @@ const Pokemons = () => {
 
     return(
         <div className="flex justify-center items-center flex-col">
-            <h1>Liste de pokémons</h1>
-            <form>
-                <input className="border-2 border-rose-500" type="text" value={searchPokemon} onChange={handleSearch}/>
+            <form className="bg-grey w-full h-16 flex justify-center items-center">
+                <input className="border-2 w-1/4 h-10 rounded-lg p-3 focus:outline-none" type="text" placeholder="Chercher un Pokémon par son nom" value={searchPokemon} onChange={handleSearch}/>
             </form>
+            <h1 className="text-4xl">Pokédex</h1>
             {loading ? <List search={searchPokemon} filter={filteredPokemons} handle={handleSearch}/> : <Loading /> }
         </div>
     )
