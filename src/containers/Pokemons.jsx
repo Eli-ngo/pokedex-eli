@@ -54,13 +54,13 @@ const Pokemons = () => {
     if(error) return error;
 
     return(
-        <>
+        <div className="flex justify-center items-center flex-col">
             <h1>Liste de pokémons</h1>
             <form>
                 <input className="border-2 border-rose-500" type="text" value={searchPokemon} onChange={handleSearch}/>
             </form>
             {loading ? <List search={searchPokemon} filter={filteredPokemons} handle={handleSearch}/> : <Loading /> }
-        </>
+        </div>
     )
 }
 

@@ -34,7 +34,7 @@ const Pokemon = () => {
                 <p>ID : {pokemon.id}</p>
                 <p>Taille : {pokemon.height} cm</p>
                 <p>Poids : {pokemon.weight} kg</p>
-                <img src={pokemon.sprites.back_default} alt={pokemon.name} />
+                <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`} alt={pokemon.name} />
                 {pokemon.abilities.map((ability, i) => (
                     <div key={i}>
                         Capacités : {ability.ability.name}
@@ -43,6 +43,11 @@ const Pokemon = () => {
                 {pokemon.types.map((type, i) => (
                     <div key={i}>
                         Types : {type.type.name}
+                    </div>
+                ))}
+                {pokemon.stats.map((stat, i) => (
+                    <div key={i}>
+                        {stat.stat.name} : {stat.base_stat}
                     </div>
                 ))}
             </div> : <Loading /> }
