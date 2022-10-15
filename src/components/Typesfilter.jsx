@@ -1,8 +1,7 @@
-const Typesfilter = ({alltypes}) => {
+const Typesfilter = ({ alltypes }) => {
 
     const handleType = (e) => {
         let typePokemon = e.target.value;
-        console.log(typePokemon);
     }
 
     return(

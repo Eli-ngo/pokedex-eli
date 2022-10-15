@@ -17,6 +17,7 @@ const Header = () => {
                     <Link to="/bookmarks">Favoris</Link>
                 </div>
             </nav>
+            <img className="object-cover w-full" src="banner.jpg" alt="couverture Pokémon"/>
         </>
     )
 }

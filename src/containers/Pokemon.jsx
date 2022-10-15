@@ -5,7 +5,7 @@ import Loading from "../components/Loading";
 const Pokemon = () => {
     const { slug } = useParams();
     const [ pokemon, setPokemon ] = useState([]);
-    const [ loading, setLoading ] = useState(false);
+    const [ loading, setLoading ] = useState(true);
 
 
     const fetchPokemon = async () => {
@@ -13,10 +13,10 @@ const Pokemon = () => {
             const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${slug}`);
             const fetchedPokemon = await res.json();
             
-            setLoading(true)
+            setLoading(false)
             setPokemon(fetchedPokemon);
         } catch(err){
-            setLoading(true);
+            setLoading(false);
             throw err;
         }
     }
@@ -29,7 +29,7 @@ const Pokemon = () => {
 
     return (
         <div className="flex justify-center items-center p-20 flex-col">
-            {loading ? <div className="bg-white flex flex-col justify-center items-center py-10 shadow-lg rounded-3xl mb-4">
+            {loading ? <Loading /> : <div className="bg-white flex flex-col justify-center items-center py-10 shadow-lg rounded-3xl mb-4">
                 <p>n°{pokemon.id}</p>
                 <p className="capitalize text-2xl font-bold">{pokemon.name}</p>
                 <img class="w-2/5" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`} alt={pokemon.name} />
@@ -72,7 +72,7 @@ const Pokemon = () => {
                         ))}
                     </div>
                 </div>
-            </div> : <Loading /> }
+            </div>}
 
             <Link to='/' className=" border-2 border-rose-500 text-rose-500 font-bold px-6 py-1 rounded-md mt-14">Retour</Link>
         </div>
