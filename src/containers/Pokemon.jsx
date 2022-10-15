@@ -29,30 +29,52 @@ const Pokemon = () => {
 
     return (
         <div className="flex justify-center items-center p-20 flex-col">
-            {loading ? <div className="bg-white">
-                <p className="capitalize">Nom : {pokemon.name}</p>
-                <p>ID : {pokemon.id}</p>
-                <p>Taille : {pokemon.height} cm</p>
-                <p>Poids : {pokemon.weight} kg</p>
-                <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`} alt={pokemon.name} />
-                {pokemon.abilities.slice(0,3).map((ability, i) => (
-                    <div key={i}>
-                        Capacités : {ability.ability.name}
+            {loading ? <div className="bg-white flex flex-col justify-center items-center py-10 shadow-lg rounded-3xl mb-4">
+                <p>n°{pokemon.id}</p>
+                <p className="capitalize text-2xl font-bold">{pokemon.name}</p>
+                <img class="w-2/5" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`} alt={pokemon.name} />
+                <div className="flex gap-3 mb-8">
+                    {pokemon.types.map((type, i) => (
+                        <div key={i} className={`capitalize px-4  rounded-md font-bold bg-${type.type.name}`}>
+                            {type.type.name}
+                        </div>
+                    ))}
+                </div>
+                <div className="w-3/5">
+                    <div className="flex flex-row justify-between items-between mb-6">
+                        <div>
+                            <h2 className="font-bold text-nav">Taille</h2>
+                            <p>{pokemon.height} cm</p>
+
+                        </div>
+                        <div>
+                            <h2 className="font-bold text-nav">Poids</h2>
+                            <p>{pokemon.weight} kg</p>
+
+                        </div>
                     </div>
-                ))}
-                {pokemon.types.map((type, i) => (
-                    <div key={i} className={`capitalize bg-${type.type.name}`}>
-                        Types : {type.type.name}
+                    <div className="mb-6">
+                        <h2 className="font-bold text-nav">Capacités</h2>
+                        <div className="flex justify-between">
+                            {pokemon.abilities.slice(0,3).map((ability, i) => (
+                            <div key={i}>
+                                {ability.ability.name}
+                            </div>
+                            ))}
+                        </div>
                     </div>
-                ))}
-                {pokemon.stats.map((stat, i) => (
-                    <div key={i}>
-                        {stat.stat.name} : {stat.base_stat}
+                    <div>
+                        <h2 className="font-bold text-nav">Statistiques</h2>
+                        {pokemon.stats.map((stat, i) => (
+                            <div key={i}>
+                                {stat.stat.name} : {stat.base_stat}
+                            </div>
+                        ))}
                     </div>
-                ))}
+                </div>
             </div> : <Loading /> }
 
-            <Link to='/'>Retour</Link>
+            <Link to='/' className=" border-2 border-rose-500 text-rose-500 font-bold px-6 py-1 rounded-md mt-14">Retour</Link>
         </div>
     );
 }
