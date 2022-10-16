@@ -52,12 +52,12 @@ const Pokemon = () => {
                                 <div className="flex flex-row justify-between items-between mb-6">
                                     <div>
                                         <h2 className="font-bold text-nav">Taille</h2>
-                                        <p>{pokemon.height} cm</p>
+                                        <p>{pokemon.height / 10} m</p>
 
                                     </div>
                                     <div>
                                         <h2 className="font-bold text-nav">Poids</h2>
-                                        <p>{pokemon.weight} kg</p>
+                                        <p>{pokemon.weight / 10} kg</p>
 
                                     </div>
                                 </div>
