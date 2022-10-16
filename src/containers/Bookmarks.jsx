@@ -25,7 +25,7 @@ const Bookmarks = () => {
     return(
         <>
             <Helmet>
-            <title>Pokédex React | Favoris</title>
+                <title>Pokédex React | Favoris</title>
             </Helmet>
             
             <div className="flex justify-center items-center flex-col"> 
@@ -33,9 +33,9 @@ const Bookmarks = () => {
                 <div className="flex flex-wrap justify-center items-center p-14">
                     {bookmark.length ? (
                         <>
-                        {bookmark.map((poke, i) => (
-                            <BookmarksList key={i} bookmark={bookmark} setBookmark={setBookmark} pokemonFiltered={pokemons.some((pokemon) => pokemon.url.split('/').slice(-2,-1).toString() === poke.toString())} mypokemons={pokemons} id={poke}/>
-                        ))}
+                            {bookmark.map((poke, i) => (
+                                <BookmarksList key={i} bookmark={bookmark} setBookmark={setBookmark} pokemonFiltered={pokemons.some((pokemon) => pokemon.url.split('/').slice(-2,-1).toString() === poke.toString())} mypokemons={pokemons} id={poke}/>
+                            ))}
                         </>
                     ) : (
                         'Aucun Pokémon dans les favoris'

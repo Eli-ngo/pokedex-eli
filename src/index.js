@@ -9,7 +9,7 @@ import Bookmarks from './containers/Bookmarks';
 import Types from './containers/Types';
 import Pokemons from './containers/Pokemons';
 import Pokemon from './containers/Pokemon';
-import { MainProvider } from 'contexts/Main';
+import { MainProvider } from 'contexts/Main'
 
 
 const router = createBrowserRouter([
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
             {
                 path: "/bookmarks",
                 element: <Bookmarks />
-            }
+            },
         ]
     }
 ])

@@ -60,7 +60,7 @@ const Pokemons = () => {
     return(
         <>
             <Helmet>
-            <title>Pokédex React | Home</title>
+                <title>Pokédex React | Home</title>
             </Helmet>
             
             <div className="flex justify-center items-center flex-col">

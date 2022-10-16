@@ -39,18 +39,20 @@ const Types = () => {
     return(
         <> 
             <Helmet>
-            <title>Pokédex React | Types</title>
+                <title>Pokédex React | Types</title>
             </Helmet>
 
             <div className="flex flex-col justify-center items-center p-16"> 
                 <h1 className="text-bold text-3xl mb-10">Filtre par types</h1>
                 <Typesfilter alltypes={types} fetchPokemons={fetchPokemons}/>
                 {pokemons ? (
-                    <>{pokemons.map((poke, i) => (
-                        <PokemonCard key={i} name={poke.pokemon.name} url={poke.pokemon.url} bookmark={bookmark} setBookmark={setBookmark}/> 
-                    ))}</>
+                    <>
+                        {pokemons.map((poke, i) => (
+                            <PokemonCard key={i} name={poke.pokemon.name} url={poke.pokemon.url} bookmark={bookmark} setBookmark={setBookmark}/> 
+                        ))}
+                    </>
                 ) : (
-                    'aucun pokemon'
+                    'Aucun Pokémon'
                 )}
             </div>
         </>
