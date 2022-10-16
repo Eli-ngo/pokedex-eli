@@ -43,7 +43,7 @@ const Pokemon = () => {
                             <img className="w-2/5" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`} alt={pokemon.name} />
                             <div className="flex gap-3 mb-8">
                                 {pokemon.types.map((type, i) => (
-                                    <div key={i} className={`capitalize px-4  rounded-md font-bold bg-${type.type.name}`}>
+                                    <div key={i} className={`capitalize px-4 text-white rounded-md bg-${type.type.name}`}>
                                         {type.type.name}
                                     </div>
                                 ))}
