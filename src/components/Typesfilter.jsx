@@ -1,16 +1,15 @@
-const Typesfilter = ({ alltypes }) => {
+const Typesfilter = ({ alltypes, fetchPokemons }) => {
 
-    const handleType = (e) => {
-        let typePokemon = e.target.value;
-        console.log(typePokemon)
+    const handleType = (typeName) => {
+        fetchPokemons(typeName)
     }
 
     return(
         <div>
             <div className="flex flex-wrap justify-center gap-5">
                 {alltypes.slice(0,18).map((type, i) => (
-                    <div key={i} className={`capitalize px-4 rounded-md bg-${type.name}`}>
-                        <button onClick={handleType} value={type.name}>{type.name}</button>
+                    <div key={i} className={`capitalize px-4 py-1 rounded-md bg-${type.name}`}>
+                        <button onClick={() => handleType(type.name)} className="capitalize text-white">{type.name}</button>
                     </div>
                 ))}
             </div>

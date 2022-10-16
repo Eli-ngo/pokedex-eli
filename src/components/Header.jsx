@@ -12,9 +12,9 @@ const Header = () => {
                     </h1>
                 </div>
                 <div className="flex gap-5">
-                    <Link to="/">Pokémons</Link>
-                    <Link to="/types">Types</Link>
-                    <Link to="/bookmarks">Favoris</Link>
+                    <Link className="font-bold" to="/">Pokémons</Link>
+                    <Link className="font-bold" to="/types">Types</Link>
+                    <Link className="font-bold" to="/bookmarks">Favoris</Link>
                 </div>
             </nav>
             <img className="object-cover w-full" src="banner.jpg" alt="couverture Pokémon"/>

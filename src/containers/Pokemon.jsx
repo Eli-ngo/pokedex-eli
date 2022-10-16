@@ -74,7 +74,7 @@ const Pokemon = () => {
                 </div>
             </div>}
 
-            <Link to='/' className=" border-2 border-rose-500 text-rose-500 font-bold px-6 py-1 rounded-md mt-14">Retour</Link>
+            <Link to='/' className="border-2 border-rose-500 text-rose-500 font-bold px-6 py-1 rounded-md mt-14">Retour</Link>
         </div>
     );
 }
