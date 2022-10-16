@@ -11,6 +11,7 @@ import Pokemons from './containers/Pokemons';
 import Pokemon from './containers/Pokemon';
 import { MainProvider } from 'contexts/Main';
 
+
 const router = createBrowserRouter([
     {
         element: <App />,

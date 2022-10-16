@@ -32,7 +32,7 @@ const Pokemon = () => {
             {loading ? <Loading /> : <div className="bg-white flex flex-col justify-center items-center py-10 shadow-lg rounded-3xl mb-4">
                 <p>n°{pokemon.id}</p>
                 <p className="capitalize text-2xl font-bold">{pokemon.name}</p>
-                <img class="w-2/5" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`} alt={pokemon.name} />
+                <img className="w-2/5" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`} alt={pokemon.name} />
                 <div className="flex gap-3 mb-8">
                     {pokemon.types.map((type, i) => (
                         <div key={i} className={`capitalize px-4  rounded-md font-bold bg-${type.type.name}`}>
