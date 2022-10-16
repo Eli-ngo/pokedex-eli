@@ -1,6 +1,6 @@
 import toast, { Toaster } from "react-hot-toast"
 
-const Like = ({ bookmark, setBookmark, id }) => {
+const Like = ({ bookmark, setBookmark, id, isBookmarked }) => {
     const handleBookmark = (eltId) => {{
     
             const isBookmarked = bookmark.includes(eltId)
@@ -37,7 +37,12 @@ const Like = ({ bookmark, setBookmark, id }) => {
     return(
         <>
             <button className="mb-4" onClick={() => handleBookmark(id)}>
-                <img src="unliked.png" alt="unliked" />
+                {isBookmarked ? (
+                    <img src="liked.png" alt="liked" />
+                ) : (
+                    <img src="unliked.png" alt="unliked" />
+                )}
+                
             </button>
         </>
     )
